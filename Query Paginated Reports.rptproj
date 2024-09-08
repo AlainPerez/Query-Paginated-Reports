@@ -55,6 +55,10 @@
     <DataSource Include="ShDS_AdventureWorks.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Query.sql">
+      <MimeType>
+      </MimeType>
+    </Report>
     <Report Include="Recursive CTE.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
