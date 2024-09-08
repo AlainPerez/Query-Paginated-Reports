@@ -16,8 +16,8 @@ WITH CTE_EmplHierarchy (BusinessEntityID, ManagerID, [Level]) AS (
         e.ManagerID = eh.BusinessEntityID
 )
 -- Final select to show the results
-SELECT cte.BusinessEntityID, CONCAT(FirstName,' ',LastName) as Fullname, PhoneNumber, [Level]
+SELECT cte.BusinessEntityID, CONCAT(p.FirstName,' ',p.LastName) as Fullname, PhoneNumber, CONCAT(pp.FirstName,' ',pp.LastName) AS Manager, [Level]
 FROM
-    CTE_EmplHierarchy cte JOIN Person.Person p ON cte.BusinessEntityID=p.BusinessEntityID JOIN Person.PersonPhone pf ON p.BusinessEntityID = pf.BusinessEntityID
+    CTE_EmplHierarchy cte JOIN Person.Person p ON cte.BusinessEntityID=p.BusinessEntityID JOIN Person.PersonPhone pf ON p.BusinessEntityID = pf.BusinessEntityID JOIN Person.Person pp ON ManagerID=pp.BusinessEntityID
 ORDER BY
     Level;
