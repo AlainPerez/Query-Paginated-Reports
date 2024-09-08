@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.11.35222.181</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-09-08T03:40:24.8374396Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-09-08T14:59:51.2763191Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -68,7 +68,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Top CPU Time Queries Server Performance</Value>
+                    <Value>Top CPU Time Queries- Server Performance</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -82,8 +82,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.19157in</Top>
-            <Left>0.68391in</Left>
+            <Top>0.44157in</Top>
+            <Left>0.6224in</Left>
             <Height>0.55778in</Height>
             <Width>6.99377in</Width>
             <Style>
@@ -97,16 +97,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.00563in</Width>
+                  <Width>1.48146in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.58657in</Width>
+                  <Width>1.27607in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.61051in</Width>
+                  <Width>2.62213in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.69433in</Width>
+                  <Width>1.37655in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -478,9 +478,9 @@
             </TablixRowHierarchy>
             <DataSetName>DS_Server_Performance</DataSetName>
             <Top>6.05832in</Top>
-            <Left>0.69444in</Left>
+            <Left>0.56089in</Left>
             <Height>0.83709in</Height>
-            <Width>6.89704in</Width>
+            <Width>6.75621in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -812,7 +812,6 @@
                   <VerticalAlign>Top</VerticalAlign>
                   <Color>#a6a6a6</Color>
                 </Style>
-                <Position>TopRight</Position>
               </ChartTitle>
             </ChartTitles>
             <Palette>Pacific</Palette>
@@ -834,9 +833,9 @@
             </ChartNoDataMessage>
             <DataSetName>DS_Server_Performance</DataSetName>
             <Top>1.28701in</Top>
-            <Left>0.81944in</Left>
+            <Left>0.75267in</Left>
             <Height>4.26652in</Height>
-            <Width>6.58573in</Width>
+            <Width>6.73324in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
