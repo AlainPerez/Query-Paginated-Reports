@@ -17,7 +17,7 @@ FROM sys.dm_exec_query_stats qs CROSS apply
 r.query_hash
 GROUP BY qs.query_hash
 ORDER BY [CPU Time Seconds] DESC
-) SELECT *, ROW_NUMBER() OVER(ORDER BY([CPU Time Seconds]) DESC) rnum
+) SELECT *, 'Query '+ CAST(ROW_NUMBER() OVER(ORDER BY([CPU Time Seconds])DESC)AS VARCHAR(3)) rnum
   FROM CTE_Performance
   ORDER BY [CPU Time Seconds] DESC</CommandText>
     </Query>
@@ -48,7 +48,7 @@ ORDER BY [CPU Time Seconds] DESC
       </Field>
       <Field Name="rnum">
         <DataField>rnum</DataField>
-        <rd:TypeName>System.Int64</rd:TypeName>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

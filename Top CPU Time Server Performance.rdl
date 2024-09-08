@@ -598,6 +598,7 @@
                       </Style>
                       <Length>0.5</Length>
                     </ChartMinorTickMarks>
+                    <Reverse>true</Reverse>
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
