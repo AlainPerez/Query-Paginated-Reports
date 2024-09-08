@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description />
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>ShDS_AdventureWorks</DataSourceReference>
+      <CommandText>WITH CTE_EmplHierarchy (BusinessEntityID, ManagerID, [Level]) AS (
+    -- Anchor member: start with employees who do not have a manager (top-level managers)
+    SELECT  BusinessEntityID, ManagerID, 0 AS [Level]
+    FROM
+        HumanResources.Employee
+    WHERE
+        ManagerID IS NULL
+
+    UNION ALL
+
+    -- Recursive member: join the CTE with the Employee table to find employees under each manager
+    SELECT e.BusinessEntityID, e.ManagerID, eh.Level + 1 AS Level
+    FROM
+        HumanResources.Employee e
+    INNER JOIN
+        CTE_EmplHierarchy eh
+    ON
+        e.ManagerID = eh.BusinessEntityID
+)
+-- Final select to show the results
+SELECT cte.BusinessEntityID, CONCAT(FirstName,' ',LastName) as Fullname, PhoneNumber, [Level]
+FROM
+    CTE_EmplHierarchy cte JOIN Person.Person p ON cte.BusinessEntityID=p.BusinessEntityID JOIN Person.PersonPhone pf ON p.BusinessEntityID = pf.BusinessEntityID
+ORDER BY
+    Level, ManagerID, BusinessEntityID;</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="BusinessEntityID">
+        <DataField>BusinessEntityID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Fullname">
+        <DataField>Fullname</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PhoneNumber">
+        <DataField>PhoneNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Level">
+        <DataField>Level</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
