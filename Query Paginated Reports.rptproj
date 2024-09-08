@@ -49,17 +49,21 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DS_Server_Performance_Metrics.rsd" />
     <DataSet Include="Recursive_Emp_Hierarchy.rsd" />
   </ItemGroup>
   <ItemGroup>
     <DataSource Include="ShDS_AdventureWorks.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Performance Query.sql">
+      <MimeType>application/octet-stream</MimeType>
+    </Report>
     <Report Include="Recursive CTE.rdl" />
     <Report Include="Recursive CTE.sql">
-      <MimeType>
-      </MimeType>
+      <MimeType>application/octet-stream</MimeType>
     </Report>
+    <Report Include="Top CPU Time Server Performance.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
