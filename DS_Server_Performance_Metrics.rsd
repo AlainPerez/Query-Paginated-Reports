@@ -18,7 +18,8 @@ r.query_hash
 GROUP BY qs.query_hash
 ORDER BY [CPU Time Seconds] DESC
 ) SELECT *, ROW_NUMBER() OVER(ORDER BY([CPU Time Seconds]) DESC) rnum
-  FROM CTE_Performance </CommandText>
+  FROM CTE_Performance
+  ORDER BY [CPU Time Seconds] DESC</CommandText>
     </Query>
     <Fields>
       <Field Name="CPU_Time_Seconds">
