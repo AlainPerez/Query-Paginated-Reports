@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.11.35222.181</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-09-08T05:40:27.8476737Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-09-08T13:30:00.6859797Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -72,6 +72,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
+            <Left>0.625in</Left>
             <Height>0.54111in</Height>
             <Width>2.40972in</Width>
             <Style>
@@ -85,21 +86,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.87037in</Width>
+                  <Width>1.15957in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.57176in</Width>
+                  <Width>1.72207in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.62948in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.97454in</Width>
+                  <Width>1.90957in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.22in</Height>
+                  <Height>0.26569in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -113,7 +114,7 @@
                                   <Value>Level</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -155,7 +156,7 @@
                                   <Value>Fullname</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -196,7 +197,7 @@
                                   <Value>Manager</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -236,7 +237,7 @@
                                   <Value>Phone Number</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -268,7 +269,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.30137in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -282,6 +283,8 @@
                                   <Value>=Fields!Level.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -321,6 +324,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -360,6 +364,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -397,6 +402,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -427,7 +433,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.26482in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -441,6 +447,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -476,6 +483,7 @@
                                   <Value>=Fields!Fullname.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -512,6 +520,7 @@
                                   <Value>=Fields!Manager.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -547,6 +556,7 @@
                                   <Value>=Fields!PhoneNumber.Value</Value>
                                   <Style>
                                     <FontFamily />
+                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -628,10 +638,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Recursive_Emp_Hierarchy</DataSetName>
-            <Top>1.1175in</Top>
-            <Left>0.31944in</Left>
-            <Height>0.64in</Height>
-            <Width>5.41667in</Width>
+            <Top>1.2425in</Top>
+            <Left>0.77777in</Left>
+            <Height>0.83189in</Height>
+            <Width>6.42069in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -639,9 +649,9 @@
             <Source>Embedded</Source>
             <Value>adventureworkslogo</Value>
             <Sizing>FitProportional</Sizing>
-            <Left>3.6875in</Left>
-            <Height>0.84944in</Height>
-            <Width>1.04861in</Width>
+            <Left>6.84613in</Left>
+            <Height>0.92254in</Height>
+            <Width>1.13998in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -650,10 +660,10 @@
             </Style>
           </Image>
         </ReportItems>
-        <Height>2.24528in</Height>
+        <Height>11in</Height>
         <Style />
       </Body>
-      <Width>5.73611in</Width>
+      <Width>8.5in</Width>
       <Page>
         <PageHeader>
           <Height>0.35417in</Height>
