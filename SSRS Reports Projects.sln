@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SQL Examples Reports", "SQL Examples Reports.rptproj", "{FF24B25B-282C-42D5-82E6-23D28681B3A3}"
 EndProject
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS Paginated Reports", "..\SSRS Paginated Reports\SSRS Paginated Reports.rptproj", "{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}"
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS Paginated Reports", "..\SSRS-Paginated-Reports\SSRS Paginated Reports.rptproj", "{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,15 +22,15 @@ Global
 		{FF24B25B-282C-42D5-82E6-23D28681B3A3}.Release|Default.ActiveCfg = Release
 		{FF24B25B-282C-42D5-82E6-23D28681B3A3}.Release|Default.Build.0 = Release
 		{FF24B25B-282C-42D5-82E6-23D28681B3A3}.Release|Default.Deploy.0 = Release
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Debug|Default.ActiveCfg = Debug
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Debug|Default.Build.0 = Debug
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Debug|Default.Deploy.0 = Debug
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.DebugLocal|Default.ActiveCfg = DebugLocal
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.DebugLocal|Default.Build.0 = DebugLocal
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.DebugLocal|Default.Deploy.0 = DebugLocal
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Release|Default.ActiveCfg = Release
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Release|Default.Build.0 = Release
-		{F967C0B8-BB64-444F-B1A1-D9A0853C6FAF}.Release|Default.Deploy.0 = Release
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Debug|Default.ActiveCfg = Debug
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Debug|Default.Build.0 = Debug
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Debug|Default.Deploy.0 = Debug
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.DebugLocal|Default.Build.0 = DebugLocal
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Release|Default.ActiveCfg = Release
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Release|Default.Build.0 = Release
+		{370FC9AD-E08A-40A1-AEE8-DC8E3A08A034}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
