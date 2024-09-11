@@ -8,7 +8,7 @@
     <OverwriteDataSources>False</OverwriteDataSources>
     <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
-    <TargetReportFolder>SQL Query Paginated Reports</TargetReportFolder>
+    <TargetReportFolder>SQL Examples Reports</TargetReportFolder>
     <TargetDatasetFolder>Datasets</TargetDatasetFolder>
     <TargetDatasourceFolder>Data Sources</TargetDatasourceFolder>
     <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="Correlated Subquery Exists.rdl" />
+    <Report Include="Correlated Subquery Exists.sql">
+      <MimeType>application/octet-stream</MimeType>
+    </Report>
     <Report Include="OVER Clause.rdl" />
     <Report Include="OVER Clause.sql">
       <MimeType>application/octet-stream</MimeType>
@@ -67,7 +70,6 @@
     <Report Include="Recursive CTE.sql">
       <MimeType>application/octet-stream</MimeType>
     </Report>
-    <Report Include="Report1.rdl" />
     <Report Include="Top CPU Time Server Performance.rdl" />
     <Report Include="Top CPU Time Server Performance.sql">
       <MimeType>application/octet-stream</MimeType>
