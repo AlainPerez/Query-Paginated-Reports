@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>ShDS_AdventureWorks</DataSourceReference>
+      <CommandText>WITH CTE_SalesPersons AS (SELECT 
+    SalesPersonID,
+    SalesOrderID,
+    OrderDate,
+    TotalDue,
+	AVG(TotalDue) OVER (PARTITION BY SalesPersonID) AS AvgSalesPerPerson,
+    RANK() OVER (PARTITION BY SalesPersonID ORDER BY TotalDue DESC) AS SalesRankByAmount
+FROM 
+    Sales.SalesOrderHeader
+WHERE 
+    SalesPersonID IS NOT NULL)
+SELECT * 
+FROM CTE_SalesPersons
+WHERE SalesRankByAmount in (1,2,3)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="SalesPersonID">
+        <DataField>SalesPersonID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SalesOrderID">
+        <DataField>SalesOrderID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OrderDate">
+        <DataField>OrderDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TotalDue">
+        <DataField>TotalDue</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="AvgSalesPerPerson">
+        <DataField>AvgSalesPerPerson</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="SalesRankByAmount">
+        <DataField>SalesRankByAmount</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

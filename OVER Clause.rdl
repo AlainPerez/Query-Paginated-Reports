@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.11.35222.181</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-09-11T04:00:35.9995388Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-09-11T03:12:05.4128314Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -17,34 +17,38 @@
     <DataSource Name="ShDS_AdventureWorks">
       <DataSourceReference>ShDS_AdventureWorks</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>c9ae9ed9-ed4e-4537-bca5-f0fc1db21f66</rd:DataSourceID>
+      <rd:DataSourceID>a994d26e-f528-4857-99eb-09397b458830</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DS_Recursive_CTE">
+    <DataSet Name="DS_OverClause">
       <SharedDataSet>
-        <SharedDataSetReference>DS_Recursive_CTE</SharedDataSetReference>
+        <SharedDataSetReference>DS_OverClause</SharedDataSetReference>
       </SharedDataSet>
       <Fields>
-        <Field Name="BusinessEntityID">
-          <DataField>BusinessEntityID</DataField>
+        <Field Name="SalesPersonID">
+          <DataField>SalesPersonID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Fullname">
-          <DataField>Fullname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PhoneNumber">
-          <DataField>PhoneNumber</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Level">
-          <DataField>Level</DataField>
+        <Field Name="SalesOrderID">
+          <DataField>SalesOrderID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Manager">
-          <DataField>Manager</DataField>
-          <rd:UserDefined>true</rd:UserDefined>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TotalDue">
+          <DataField>TotalDue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AvgSalesPerPerson">
+          <DataField>AvgSalesPerPerson</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SalesRankByAmount">
+          <DataField>SalesRankByAmount</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -53,14 +57,14 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="textbox1">
+          <Textbox Name="textbox2">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Employee Hierarchies</Value>
+                    <Value>Salers TOP Sales - Over Clause</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -68,30 +72,14 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Recursive CTE</Value>
-                    <Style>
-                      <FontFamily>Segoe UI Light</FontFamily>
-                      <FontSize>24pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.17741in</Top>
-            <Height>0.89633in</Height>
-            <Width>5.39916in</Width>
+            <Top>0.19338in</Top>
+            <Left>0.34247in</Left>
+            <Height>0.54111in</Height>
+            <Width>4.75439in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -99,36 +87,57 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Image Name="Image2">
+            <Source>Embedded</Source>
+            <Value>adventureworkslogo</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.00267in</Top>
+            <Left>5.21857in</Left>
+            <Height>0.92254in</Height>
+            <Width>1.13998in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
           <Tablix Name="table1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.04155in</Width>
+                  <Width>0.77118in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.60405in</Width>
+                  <Width>0.56912in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.51146in</Width>
+                  <Width>0.74177in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.79155in</Width>
+                  <Width>1.8119in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.06053in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.11934in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.26569in</Height>
+                  <Height>0.23903in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox2">
+                        <Textbox Name="textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Level</Value>
+                                  <Value>Sales Person</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>14pt</FontSize>
@@ -153,6 +162,7 @@
                             </BottomBorder>
                             <BackgroundColor>Green</BackgroundColor>
                             <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -170,7 +180,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fullname</Value>
+                                  <Value>Rank</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>14pt</FontSize>
@@ -180,6 +190,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -194,46 +205,7 @@
                             </BottomBorder>
                             <BackgroundColor>Green</BackgroundColor>
                             <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox8">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Manager</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <FontSize>14pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>Green</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -251,7 +223,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Phone Number</Value>
+                                  <Value>Sales Order</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>14pt</FontSize>
@@ -261,6 +233,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -275,52 +248,7 @@
                             </BottomBorder>
                             <BackgroundColor>Green</BackgroundColor>
                             <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.30137in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Level">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Level.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <FontSize>14pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Level</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -338,10 +266,184 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
+                                  <Value>Order Date</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Due</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Avg Sales</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>Green</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.21in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesPersonID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SalesPersonID.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SalesPersonID</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
                                   <Value />
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -352,7 +454,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -371,7 +473,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox9">
+                        <Textbox Name="textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -381,17 +483,17 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <rd:DefaultName>textbox10</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -399,6 +501,7 @@
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -409,7 +512,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox7">
+                        <Textbox Name="textbox12">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -419,18 +522,95 @@
                                   <Value />
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>16pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -450,11 +630,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.26482in</Height>
+                  <Height>0.21in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox3">
+                        <Textbox Name="textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -469,9 +649,7 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox3</rd:DefaultName>
@@ -491,14 +669,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Fullname">
+                        <Textbox Name="SalesRankByAmount">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Fullname.Value</Value>
+                                  <Value>=Fields!SalesRankByAmount.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>12pt</FontSize>
@@ -507,11 +685,11 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Fullname</rd:DefaultName>
+                          <rd:DefaultName>SalesRankByAmount</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -521,6 +699,7 @@
                             </BottomBorder>
                             <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "LightGreen", "White")</BackgroundColor>
                             <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -531,14 +710,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Manager">
+                        <Textbox Name="SalesOrderID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Manager.Value</Value>
+                                  <Value>=Fields!SalesOrderID.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>12pt</FontSize>
@@ -547,11 +726,11 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Manager</rd:DefaultName>
+                          <rd:DefaultName>SalesOrderID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -560,6 +739,8 @@
                               <Style>Solid</Style>
                             </BottomBorder>
                             <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "LightGreen", "White")</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -570,27 +751,28 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="PhoneNumber">
+                        <Textbox Name="OrderDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PhoneNumber.Value</Value>
+                                  <Value>=Fields!OrderDate.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>12pt</FontSize>
+                                    <Format>g</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>PhoneNumber</rd:DefaultName>
+                          <rd:DefaultName>OrderDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -600,6 +782,93 @@
                             </BottomBorder>
                             <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "LightGreen", "White")</BackgroundColor>
                             <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="TotalDue">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TotalDue.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>12pt</FontSize>
+                                    <Format>'$' #,0.00;('$' #,0.00)</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TotalDue</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "LightGreen", "White")</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="AvgSalesPerPerson">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!AvgSalesPerPerson.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>12pt</FontSize>
+                                    <Format>'$' #,0.00;('$' #,0.00)</Format>
+                                    <Color>#333333</Color>
+                                    <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>AvgSalesPerPerson</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "LightGreen", "White")</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -618,6 +887,8 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -628,14 +899,14 @@
                   <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="table1_Level">
+                  <Group Name="table1_SalesPersonID">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Level.Value</GroupExpression>
+                      <GroupExpression>=Fields!SalesPersonID.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Level.Value</Value>
+                      <Value>=Fields!SalesPersonID.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -652,7 +923,7 @@
                       </TablixMembers>
                       <Visibility>
                         <Hidden>true</Hidden>
-                        <ToggleItem>Level</ToggleItem>
+                        <ToggleItem>SalesPersonID</ToggleItem>
                       </Visibility>
                       <DataElementName>Detail_Collection</DataElementName>
                       <DataElementOutput>Output</DataElementOutput>
@@ -662,35 +933,17 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <RepeatColumnHeaders>true</RepeatColumnHeaders>
-            <RepeatRowHeaders>true</RepeatRowHeaders>
-            <FixedColumnHeaders>true</FixedColumnHeaders>
-            <FixedRowHeaders>true</FixedRowHeaders>
-            <DataSetName>DS_Recursive_CTE</DataSetName>
+            <DataSetName>DS_OverClause</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>1.2425in</Top>
-            <Left>0.19009in</Left>
-            <Height>0.83188in</Height>
-            <Width>5.9486in</Width>
-            <ZIndex>1</ZIndex>
+            <Top>1.22128in</Top>
+            <Left>0.14236in</Left>
+            <Height>0.65903in</Height>
+            <Width>6.07383in</Width>
+            <ZIndex>2</ZIndex>
             <Style />
           </Tablix>
-          <Image Name="Image2">
-            <Source>Embedded</Source>
-            <Value>adventureworkslogo</Value>
-            <Sizing>FitProportional</Sizing>
-            <Left>5.34613in</Left>
-            <Height>0.92254in</Height>
-            <Width>0.97733in</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Image>
           <Textbox Name="Textbox10">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -698,7 +951,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>WITH CTE</Value>
+                    <Value>WITH </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -707,7 +960,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>_EmplHierarchy (BusinessEntityID, ManagerID, [Level]) </Value>
+                    <Value>CTE_SalesPersons </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -724,61 +977,184 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>(
+                    <Value>(</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>SELECT </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>
+    SalesPersonID,
+    SalesOrderID,
+    OrderDate,
+    TotalDue,
+	   </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>AVG</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Tomato</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>(TotalDue) </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>OVER </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>(</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>PARTITION BY</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> SalesPersonID) </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>AS </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>AvgSalesPerPerson,
+    </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>RANK()</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Tomato</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>OVER </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>(</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>PARTITION BY</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> SalesPersonID </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>ORDER BY</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> TotalDue </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>DESC</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>) AS SalesRankByAmount
 </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>    -- Anchor member: start with employees who do not have a manager (top-level managers)</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>LimeGreen</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>SELECT  </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>BusinessEntityID, ManagerID, 0 </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>[Level]
-    </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -795,8 +1171,9 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>HumanResources.Employee
-    </Value>
+                    <Value>
+    Sales.SalesOrderHeader
+</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -813,7 +1190,8 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>ManagerID </Value>
+                    <Value>
+    SalesPersonID </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -821,161 +1199,16 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>IS NULL</Value>
+                    <Value>IS NOT NULL</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
-                      <Color>Brown</Color>
+                      <Color>Maroon</Color>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value xml:space="preserve">
-
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>UNION ALL</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">
-
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>-- Recursive member: join the CTE with the Employee table to find employees under each manager</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>LimeGreen</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>SELECT </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>e.BusinessEntityID, e.ManagerID, eh.[Level] + 1 </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>[Level]
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>FROM</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> HumanResources.Employee e </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>INNER JOIN</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> CTE_EmplHierarchy eh
-    </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>ON </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>e.ManagerID = eh.BusinessEntityID
-)
-</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>-- Final select to show the results</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>LimeGreen</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve">
+                    <Value>)
 </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
@@ -993,109 +1226,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>cte.BusinessEntityID, </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>CONCAT</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(p.FirstName,' ',p.LastName) </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> Fullname, PhoneNumber, </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>IIF</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>CONCAT</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(pp.FirstName,' ',pp.LastName)=' ','Top-Level Manager',</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>CONCAT</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(pp.FirstName,' ',pp.LastName)) </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>Manager, [Level]
+                    <Value>* 
 </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
@@ -1113,109 +1244,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>CTE_EmplHierarchy cte </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>JOIN </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>Person.Person p </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>ON </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>cte.BusinessEntityID=p.BusinessEntityID </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>JOIN </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>Person.PersonPhone pf </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>ON </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>p.BusinessEntityID = pf.BusinessEntityID </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>LEFT JOIN </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>Person.Person pp </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>ON </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>ManagerID = pp.BusinessEntityID
+                    <Value>CTE_SalesPersons
 </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
@@ -1224,7 +1253,25 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>ORDER BY </Value>
+                    <Value>WHERE </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>SalesRankByAmount </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>in </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -1233,7 +1280,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>[Level];</Value>
+                    <Value>(1,2,3)</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -1245,22 +1292,18 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>2.95361in</Top>
-            <Left>0.14048in</Left>
+            <Top>2.60987in</Top>
+            <Left>0.14236in</Left>
             <Height>2.31944in</Height>
-            <Width>6.12321in</Width>
+            <Width>6.07383in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="textbox8">
+          <Textbox Name="textbox15">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -1281,9 +1324,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>2.2875in</Top>
-            <Left>0.06486in</Left>
-            <Height>0.54111in</Height>
+            <Top>1.97264in</Top>
+            <Left>0.14236in</Left>
+            <Height>0.51257in</Height>
             <Width>6.07383in</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -1294,13 +1337,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11in</Height>
+        <Height>5.17931in</Height>
         <Style />
       </Body>
       <Width>6.35855in</Width>
       <Page>
         <PageFooter>
-          <Height>0.38889in</Height>
+          <Height>0.32059in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1329,8 +1372,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.06944in</Top>
-              <Left>2.13417in</Left>
+              <Left>1.74636in</Left>
               <Height>0.25in</Height>
               <Width>2.86583in</Width>
               <Style>
@@ -1394,5 +1436,5 @@ xI3X33DUvop2Fonrr71OdMnqJByWSGRDap3ohiGDBov33n0vYd1XX35FSCAcVqvomp0jDh48WO+5z+cT
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>8a446036-a816-4437-8521-45d6e7b7cda0</rd:ReportID>
+  <rd:ReportID>11f22782-7844-4a0a-ad4c-52e8faff8cbd</rd:ReportID>
 </Report>
