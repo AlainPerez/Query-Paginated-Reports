@@ -49,6 +49,7 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DS_CorrelatedSubqueryExists.rsd" />
     <DataSet Include="DS_OverClause.rsd" />
     <DataSet Include="DS_Recursive_CTE.rsd" />
     <DataSet Include="DS_Server_Performance_Metrics.rsd" />
@@ -57,15 +58,20 @@
     <DataSource Include="ShDS_AdventureWorks.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Correlated Subquery Exists.rdl" />
     <Report Include="OVER Clause.rdl" />
-    <Report Include="Performance Query.sql">
+    <Report Include="OVER Clause.sql">
       <MimeType>application/octet-stream</MimeType>
     </Report>
     <Report Include="Recursive CTE.rdl" />
     <Report Include="Recursive CTE.sql">
       <MimeType>application/octet-stream</MimeType>
     </Report>
+    <Report Include="Report1.rdl" />
     <Report Include="Top CPU Time Server Performance.rdl" />
+    <Report Include="Top CPU Time Server Performance.sql">
+      <MimeType>application/octet-stream</MimeType>
+    </Report>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
