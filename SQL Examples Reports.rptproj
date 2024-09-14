@@ -52,6 +52,7 @@
     <DataSet Include="DS_CorrelatedSubqueryExists.rsd" />
     <DataSet Include="DS_OverClause.rsd" />
     <DataSet Include="DS_Recursive_CTE.rsd" />
+    <DataSet Include="DS_Self_Left_Join.rsd" />
     <DataSet Include="DS_Server_Performance_Metrics.rsd" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,10 @@
     </Report>
     <Report Include="Recursive CTE.rdl" />
     <Report Include="Recursive CTE.sql">
+      <MimeType>application/octet-stream</MimeType>
+    </Report>
+    <Report Include="Self Left Join.rdl" />
+    <Report Include="Self Left Join.sql">
       <MimeType>application/octet-stream</MimeType>
     </Report>
     <Report Include="Top CPU Time Server Performance.rdl" />

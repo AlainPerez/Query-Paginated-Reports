@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.11.35222.181</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-09-14T01:44:51.3110443Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-09-14T02:56:39.9911278Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -21,21 +21,25 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DS_CorrelatedSubquery">
+    <DataSet Name="DS_Self_Left_Join">
       <SharedDataSet>
-        <SharedDataSetReference>DS_CorrelatedSubqueryExists</SharedDataSetReference>
+        <SharedDataSetReference>DS_Self_Left_Join</SharedDataSetReference>
       </SharedDataSet>
       <Fields>
-        <Field Name="FirstName">
-          <DataField>FirstName</DataField>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeJobTitle">
+          <DataField>EmployeeJobTitle</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MiddleName">
-          <DataField>MiddleName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="ManagerID">
+          <DataField>ManagerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="LastName">
-          <DataField>LastName</DataField>
+        <Field Name="ManagerJobTitle">
+          <DataField>ManagerJobTitle</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -52,7 +56,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Employees with &gt; 5 Sales </Value>
+                    <Value>Employee with their Manager </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>22pt</FontSize>
@@ -69,7 +73,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>(Correlated SubQuery with EXISTS and NULLs Check)</Value>
+                    <Value>(Self Join with an Outer Join)</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>12pt</FontSize>
@@ -85,7 +89,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.19338in</Top>
+            <Top>0.31838in</Top>
             <Left>0.34247in</Left>
             <Height>0.54111in</Height>
             <Width>4.75439in</Width>
@@ -118,7 +122,152 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>SELECT </Value>
+                    <Value>CREATE FUNCTION</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> [dbo].[udf_employee_manager]()
+</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>RETURNS </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>@Table_Var </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>TABLE </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>
+(
+	EmployeeID  </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>int</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, 
+	EmployeeJobTitle </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>nvarchar</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>(50),
+	ManagerID </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>int</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>,
+	ManagerJobTitle </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>nvarchar</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>(50)
+)
+</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>AS</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">
+</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>BEGIN</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -136,41 +285,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>ISNULL</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(p.Title,</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>''</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>) + p.FirstName </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
+                    <Value>INSERT INTO</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -179,129 +294,8 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>FirstName,
-	p.MiddleName </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>MiddleName,
- p.LastName </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>AS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>LastName
-</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>FROM </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>HumanResources.Employee AS e
-</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>JOIN </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>Person.Person AS p </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>ON </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>e.BusinessEntityID = p.BusinessEntityID
-</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>WHERE </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>EXISTS </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>(
-        </Value>
+                    <Value> @Table_Var 
+		   </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -318,8 +312,12 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>1
-        </Value>
+                    <Value>
+				   emp.BusinessEntityID AS EmployeeID,
+				   emp.JobTitle AS EmployeeJobTitle,
+				   mgr.BusinessEntityID AS ManagerID,
+				   mgr.JobTitle AS ManagerJobTitle 
+		   </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -336,8 +334,8 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>Sales.SalesOrderHeader AS soh
-        </Value>
+                    <Value>HumanResources.Employee AS emp
+			  </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -345,7 +343,25 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>WHERE </Value>
+                    <Value>LEFT JOIN</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Olive</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> HumanResources.Employee AS mgr 
+			  </Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>ON   </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -354,8 +370,8 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>soh.SalesPersonID = e.BusinessEntityID
-        </Value>
+                    <Value>emp.ManagerID = mgr.BusinessEntityID
+		  	</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -363,26 +379,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>GROUP BY</Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>Teal</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> soh.SalesPersonID
-        </Value>
-                    <Style>
-                      <FontFamily>courier New</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>HAVING </Value>
+                    <Value>ORDER BY </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -391,20 +388,40 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>COUNT</Value>
+                    <Value>emp.BusinessEntityID;
+
+	</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
-                      <Color>Tomato</Color>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>(soh.SalesOrderID) &gt; 5);</Value>
+                    <Value>RETURN </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">
+</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>END</Value>
+                    <Style>
+                      <FontFamily>courier New</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <Color>Teal</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -460,13 +477,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.79977in</Width>
+                  <Width>0.81159in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.79977in</Width>
+                  <Width>2.0336in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.79977in</Width>
+                  <Width>0.72479in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.50386in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -482,16 +502,17 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>First Name</Value>
+                                  <Value>Employee</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -524,10 +545,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Middle Name</Value>
+                                  <Value>Employee Job Title</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -566,10 +587,53 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Last Name</Value>
+                                  <Value>Manager</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Manager Job Title</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
@@ -580,7 +644,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -606,27 +670,26 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="FirstName">
+                        <Textbox Name="EmployeeID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FirstName.Value</Value>
+                                  <Value>=Fields!EmployeeID.Value</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>FirstName</rd:DefaultName>
+                          <rd:DefaultName>EmployeeID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -634,7 +697,7 @@
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>White</BackgroundColor>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "White", "LightGreen")</BackgroundColor>
                             <FontFamily />
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -647,27 +710,26 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="MiddleName">
+                        <Textbox Name="EmployeeJobTitle">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!MiddleName.Value</Value>
+                                  <Value>=Fields!EmployeeJobTitle.Value</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>MiddleName</rd:DefaultName>
+                          <rd:DefaultName>EmployeeJobTitle</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -675,7 +737,7 @@
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>White</BackgroundColor>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "White", "LightGreen")</BackgroundColor>
                             <FontFamily />
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -688,27 +750,26 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="LastName">
+                        <Textbox Name="ManagerID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LastName.Value</Value>
+                                  <Value>=Fields!ManagerID.Value</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>12pt</FontSize>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>LastName</rd:DefaultName>
+                          <rd:DefaultName>ManagerID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -716,7 +777,47 @@
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
-                            <BackgroundColor>White</BackgroundColor>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "White", "LightGreen")</BackgroundColor>
+                            <FontFamily />
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ManagerJobTitle">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ManagerJobTitle.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ManagerJobTitle</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "White", "LightGreen")</BackgroundColor>
                             <FontFamily />
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -733,6 +834,7 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -758,11 +860,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DS_CorrelatedSubquery</DataSetName>
-            <Top>1.24966in</Top>
-            <Left>0.46747in</Left>
+            <DataSetName>DS_Self_Left_Join</DataSetName>
+            <Top>1.12466in</Top>
+            <Left>0.14236in</Left>
             <Height>0.52028in</Height>
-            <Width>5.39931in</Width>
+            <Width>6.07383in</Width>
             <ZIndex>4</ZIndex>
             <Style />
           </Tablix>
