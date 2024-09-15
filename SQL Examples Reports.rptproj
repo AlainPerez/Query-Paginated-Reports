@@ -49,6 +49,7 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DS_Case_Sargable.rsd" />
     <DataSet Include="DS_CorrelatedSubqueryExists.rsd" />
     <DataSet Include="DS_OverClause.rsd" />
     <DataSet Include="DS_Recursive_CTE.rsd" />
@@ -59,6 +60,7 @@
     <DataSource Include="ShDS_AdventureWorks.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Case Sargable SP.rdl" />
     <Report Include="Correlated Subquery Exists.rdl" />
     <Report Include="Correlated Subquery Exists.sql">
       <MimeType>application/octet-stream</MimeType>
