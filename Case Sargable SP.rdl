@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.11.35222.181</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-09-14T22:20:41.0403730Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-09-15T04:40:26.5948048Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -527,7 +527,7 @@ BEGIN</Value>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>'01/01/2014'</Value>
+                    <Value>'20140101'</Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -553,7 +553,7 @@ BEGIN</Value>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>'12/31/2014' </Value>
+                    <Value>'20141231' </Value>
                     <Style>
                       <FontFamily>courier New</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -1496,7 +1496,7 @@ BEGIN</Value>
             <Top>1.14466in</Top>
             <Left>0.17928in</Left>
             <Height>0.7025in</Height>
-            <Width>6.03691in</Width>
+            <Width>6.03692in</Width>
             <ZIndex>4</ZIndex>
             <Style />
           </Tablix>

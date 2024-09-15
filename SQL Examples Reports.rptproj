@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="Case Sargable SP.rdl" />
+    <Report Include="Case Sargable SP.sql">
+      <MimeType>application/octet-stream</MimeType>
+    </Report>
     <Report Include="Correlated Subquery Exists.rdl" />
     <Report Include="Correlated Subquery Exists.sql">
       <MimeType>application/octet-stream</MimeType>
