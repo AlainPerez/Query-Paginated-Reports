@@ -72,6 +72,7 @@
     <Report Include="Dynamic SQL.sql">
       <MimeType>application/octet-stream</MimeType>
     </Report>
+    <Report Include="Optimizations from Query Store.rdl" />
     <Report Include="OVER Clause.rdl" />
     <Report Include="OVER Clause.sql">
       <MimeType>application/octet-stream</MimeType>
